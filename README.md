@@ -1,6 +1,6 @@
 # Conversor masivo de imágenes a WebP / AVIF
 
-Script en Python que convierte imágenes `.png`, `.jpg` y `.jpeg` de una carpeta (y sus subcarpetas) a **WebP** o **AVIF**, replicando la misma estructura de carpetas en el destino. Lo hice para reducir el peso de las imágenes de una web y los servidores en los que están alojadas, para mejorar su tiempo de carga.
+Script en Python que convierte imágenes `.png`, `.jpg` y `.jpeg` de una carpeta (y sus subcarpetas) a **WebP** o **AVIF**, replicando la misma estructura de carpetas en el destino. Lo hice para reducir el peso de las imágenes de una web y el espacio que ocupan en el servidor, y así mejorar su tiempo de carga.
 
 ## Qué hace
 
@@ -18,11 +18,12 @@ docker build -t conversor-imagenes .
 ```
 
 El script es interactivo, así que se ejecuta con `docker run -it --rm`, montando con `-v` la carpeta de originales y la de destino. Una vez dentro, te pregunta tres cosas:
+
 1. Carpeta de origen
 2. Carpeta de destino
 3. Formato: `webp` o `avif`
 
-## Uso sin Docker ( Normalmente con..)
+## Uso sin Docker
 
 ```bash
 pip install pillow pillow-avif-plugin tqdm

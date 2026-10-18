@@ -11,21 +11,12 @@ Script en Python que convierte imágenes `.png`, `.jpg` y `.jpeg` de una carpeta
 
 ## Uso con Docker 
 
-```bash
-docker build -t conversor-imagenes .
-
-docker run -it --rm \
-  -v "/ruta/a/originales:/entrada:ro" \
-  -v "/ruta/a/convertidas:/salida" \
-  conversor-imagenes
-```
-
 El script es interactivo (por eso el `-it`) y te pregunta tres cosas:
 1. Carpeta de origen: escribe `/entrada`
 2. Carpeta de destino: escribe `/salida`
 3. Formato: `webp` o `avif`
 
-## Uso sin Docker
+## Uso sin Docker ( Normalmente con..)
 
 ```bash
 pip install pillow pillow-avif-plugin tqdm

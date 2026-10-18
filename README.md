@@ -9,11 +9,17 @@ Script en Python que convierte imágenes `.png`, `.jpg` y `.jpeg` de una carpeta
 - Si la imagen destino ya existe, la salta, así que se puede relanzar tras un corte sin repetir trabajo.
 - Conserva la transparencia de los PNG.
 
-## Uso con Docker 
+## Uso con Docker
 
-El script es interactivo (por eso el `-it`) y te pregunta tres cosas:
-1. Carpeta de origen: escribe `/entrada`
-2. Carpeta de destino: escribe `/salida`
+Incluye un `Dockerfile` para ejecutarlo sin instalar Python:
+
+```bash
+docker build -t conversor-imagenes .
+```
+
+El script es interactivo, así que se ejecuta con `docker run -it --rm`, montando con `-v` la carpeta de originales y la de destino. Una vez dentro, te pregunta tres cosas:
+1. Carpeta de origen
+2. Carpeta de destino
 3. Formato: `webp` o `avif`
 
 ## Uso sin Docker ( Normalmente con..)
